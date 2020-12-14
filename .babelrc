@@ -1,0 +1,13 @@
+{
+  "presets": [
+    "@babel/preset-react",
+    "@babel/preset-env",
+    "@emotion/babel-preset-css-prop"
+  ],
+  "plugins": [
+    "emotion",
+    "react-hot-loader/babel",
+    "@loadable/babel-plugin",
+    "@babel/plugin-proposal-optional-chaining"
+  ]
+}
