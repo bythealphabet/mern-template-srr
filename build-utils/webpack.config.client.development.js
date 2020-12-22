@@ -13,9 +13,9 @@ function webpackClientDevelopment(mode, name) {
       path.join(CURRENT_WORKING_DIR, "/client/index.js"),
     ],
     output: {
-      path: path.join(CURRENT_WORKING_DIR, "/dist/web/"),
+      path: path.join(CURRENT_WORKING_DIR, "/dist"),
       filename: "bundle.js",
-      publicPath: "/dist/web/",
+      publicPath: "/dist/",
     },
     resolve: {
       extensions: [".js", ".jsx", ".scss"],

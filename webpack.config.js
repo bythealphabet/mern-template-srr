@@ -1,5 +1,4 @@
 const { merge } = require("webpack-merge");
-const LoadablePlugin = require("@loadable/webpack-plugin");
 
 const modeConfig = (mode, name) =>
   name === "server"
@@ -36,7 +35,6 @@ function webpackBaseConfig(env = {}) {
           },
         ],
       },
-      plugins: [new LoadablePlugin()],
     },
     modeConfig(mode, name),
     presetConfig({ mode, presets })

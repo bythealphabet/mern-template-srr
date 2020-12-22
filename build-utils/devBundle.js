@@ -13,10 +13,6 @@ function compile(app) {
       return {
         devMiddleware: webpackMiddleware(compiler, {
           publicPath,
-          serverSideRender: true,
-          writeToDisk(filePath) {
-            return /dist\//.test(filePath);
-          },
         }),
         compiler,
       };

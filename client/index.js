@@ -1,29 +1,13 @@
 import React from "react";
-
-import { CacheProvider } from "@emotion/core";
-import createCache from "@emotion/cache";
-
-import { hydrate } from "react-dom";
-
-import { Provider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
-import reducer from "./redux";
-
-import { loadableReady } from "@loadable/component";
+import ReactDOM from "react-dom";
 
 import App from "./App";
+import GlobalStyles from "./GlobalStyles";
 
-const cache = createCache();
-
-const store = configureStore({ reducer, preloadedState: window.INITIAL_STATE });
-
-loadableReady(() => {
-  hydrate(
-    <Provider store={store}>
-      <CacheProvider value={cache}>
-        <App />
-      </CacheProvider>
-    </Provider>,
-    document.getElementById("root")
-  );
-});
+ReactDOM.render(
+  <>
+    <GlobalStyles />
+    <App />
+  </>,
+  document.getElementById("root")
+);

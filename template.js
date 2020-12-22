@@ -1,4 +1,4 @@
-export default ({ html, css, ids }, helmet, initialState, scriptTags) => {
+export default () => {
   return `<!DOCTYPE html>
 <html>
   <head>
@@ -7,27 +7,17 @@ export default ({ html, css, ids }, helmet, initialState, scriptTags) => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- SEO -->
-    ${helmet.meta ? helmet.meta.toString() : ""}
-    ${helmet.title ? helmet.title.toString() : ""} 
-    <meta name="keywords" content="Willemstad, Curacao, business, Awnings, overkapping , Sail Shades, Shaduw Zeil, shaduw zeil ,Outdoors Roller Shutters, Rolluiken, rolluiken" />
-    <meta name="author" content="Lucas Web Development" />
-    <meta name="copyright" content="Solargard N.V." />
+    <meta name="keywords" content="Willemstad, Curacao, business" />
+    <meta name="description" content="all business curacao website" />
+    <meta name="author" content="bythealphabet.com" />
+    <meta name="url" content="http://www.yourdomainname.com" />
+    <meta name="copyright" content="company name" />
+    <title>BytheAlphabet</title>
     
-    <link rel="apple-touch-icon" sizes="180x180" href="https://vertisolsolargard.s3.amazonaws.com/suncloud/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://vertisolsolargard.s3.amazonaws.com/suncloud/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://vertisolsolargard.s3.amazonaws.com/suncloud/favicon-16x16.png">
-
-    <!-- All CSS Plugins -->
-  
-     <style data-emotion-css="${ids.join(" ")}">${css}</style>
   </head>
   <body>
-    <div id="root">${html}</div>
-    <script>
-      window.INITIAL_STATE= ${initialState}
-    </script>
-    ${scriptTags}
-    
+    <div id="root"></div>
+    <script type="text/javascript" src="/dist/bundle.js"></script>
   </body>
 </html>`;
 };
