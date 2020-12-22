@@ -1,13 +1,10 @@
 const { merge } = require("webpack-merge");
 const LoadablePlugin = require("@loadable/webpack-plugin");
 
-const modeConfig = (mode, name) => {
-  console.log("tha mode", mode);
-  console.log("tha name", name);
-  return name === "server"
+const modeConfig = (mode, name) =>
+  name === "server"
     ? require(`./build-utils/webpack.config.server`)(name)
     : require(`./build-utils/webpack.config.client.${mode}`)(mode, name);
-};
 
 const presetConfig = require("./build-utils/loadPresets");
 
